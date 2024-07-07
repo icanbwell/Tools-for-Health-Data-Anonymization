@@ -13,7 +13,11 @@
       "otherValues": "redact"
     },
     {
-      "path": "nodesByType('Extension')",
+      "path": "Resource.extension",
+      "method": "keep"
+    },
+    {
+      "path": "Resource.meta.security",
       "method": "redact"
     },
     {
@@ -54,6 +58,10 @@
     },
     {
       "path": "Resource.patient",
+      "method": "redact"
+    },
+    {
+      "path": "Resource.subject",
       "method": "redact"
     },
     {
