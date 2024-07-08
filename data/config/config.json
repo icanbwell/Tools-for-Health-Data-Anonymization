@@ -25,10 +25,6 @@
       "method": "redact"
     },
     {
-      "path": "Patient.link",
-      "method": "redact"
-    },
-    {
       "path": "Organization.identifier",
       "method": "keep"
     },
@@ -360,8 +356,8 @@
       "method": "redact"
     },
     {
-      "path": "Immunization.occurrence",
-      "method": "redact"
+      "path": "Immunization.occurrenceDateTime",
+      "method": "dateshift"
     },
     {
       "path": "ImmunizationEvaluation.description",
