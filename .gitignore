@@ -399,3 +399,4 @@ FodyWeavers.xsd
 *.sln.iml
 /data/input/
 /data/output/
+/.idea/

@@ -21,6 +21,10 @@
       "method": "redact"
     },
     {
+      "path": "Resource.meta.source",
+        "method": "redact"
+    },
+    {
       "path": "Organization.identifier",
       "method": "keep"
     },
@@ -728,6 +732,10 @@
       "method": "redact"
     },
     {
+      "path": "nodesByType('Extension')",
+      "method": "redact"
+    },
+    {
       "path": "nodesByType('Attachment').url",
       "method": "redact"
     },
@@ -737,7 +745,7 @@
     },
     {
       "path": "nodesByType('Identifier').value",
-      "method": "redact"
+      "method": "cryptoHash"
     },
     {
       "path": "nodesByType('Narrative')",
