@@ -22,7 +22,11 @@
     },
     {
       "path": "Resource.meta.source",
-        "method": "redact"
+      "method": "redact"
+    },
+    {
+      "path": "Patient.link",
+      "method": "redact"
     },
     {
       "path": "Organization.identifier",
@@ -62,11 +66,11 @@
     },
     {
       "path": "Resource.patient",
-      "method": "redact"
+      "method": "cryptoHash"
     },
     {
       "path": "Resource.subject",
-      "method": "redact"
+      "method": "cryptoHash"
     },
     {
       "path": "Bundle.entry.fullUrl",
@@ -461,7 +465,7 @@
     },
     {
       "path": "Coverage.class.value",
-      "method": "redact"
+      "method": "cryptoHash"
     },
     {
       "path": "Coverage.class.name",
@@ -790,8 +794,7 @@
   ],
   "parameters": {
     "dateShiftKey": "",
-    "dateShiftScope": "resource",
-    "dateShiftFixedOffsetInDays": 7,
+    "dateShiftScope": "file",
     "cryptoHashKey": "",
     "encryptKey": "",
     "enablePartialAgesForRedact": true,
