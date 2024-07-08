@@ -4,13 +4,7 @@
   "fhirPathRules": [
     {
       "path": "Patient.birthDate",
-      "method": "generalize",
-      "cases": {
-        "$this >= @1990-01-01 and $this <= @2000-01-01": "@1990-01-01",
-        "$this >= @1900-01-01 and $this <= @1990-01-01": "@1950-01-01",
-        "$this >= @2010-01-01 and $this <= @2050-01-01": "@2010-01-01"
-      },
-      "otherValues": "redact"
+      "method": "dateshift"
     },
     {
       "path": "Resource.extension",
