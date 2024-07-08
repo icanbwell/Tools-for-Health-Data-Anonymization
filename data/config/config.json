@@ -97,30 +97,6 @@
       "method": "redact"
     },
     {
-      "path": "HealthcareService.name",
-      "method": "redact"
-    },
-    {
-      "path": "HealthcareService.comment",
-      "method": "redact"
-    },
-    {
-      "path": "HealthcareService.availabilityExceptions",
-      "method": "redact"
-    },
-    {
-      "path": "HealthcareService.extraDetails",
-      "method": "redact"
-    },
-    {
-      "path": "HealthcareService.eligibility.comment",
-      "method": "redact"
-    },
-    {
-      "path": "HealthcareService.notAvaliable.description",
-      "method": "redact"
-    },
-    {
       "path": "Endpoint.name",
       "method": "redact"
     },
@@ -226,7 +202,7 @@
     },
     {
       "path": "AllergyIntolerance.onset",
-      "method": "redact"
+      "method": "dateshift"
     },
     {
       "path": "AllergyIntolerance.reaction.description",
@@ -237,12 +213,24 @@
       "method": "redact"
     },
     {
+      "path": "Condition.onsetDateTime",
+      "method": "dateshift"
+    },
+    {
       "path": "Condition.onset",
       "method": "redact"
     },
     {
+      "path": "Condition.abatementDateTime",
+      "method": "dateshift"
+    },
+    {
       "path": "Condition.abatement",
       "method": "redact"
+    },
+    {
+      "path": "Procedure.performedDateTime",
+      "method": "dateshift"
     },
     {
       "path": "Procedure.performed",
@@ -254,7 +242,7 @@
     },
     {
       "path": "FamilyMemberHistory.born",
-      "method": "redact"
+      "method": "dateshift"
     },
     {
       "path": "FamilyMemberHistory.age",
@@ -289,18 +277,6 @@
     },
     {
       "path": "DetectedIssue.detail",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.value",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.referenceRange",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.component.value",
       "method": "redact"
     },
     {
@@ -453,23 +429,7 @@
     },
     {
       "path": "Coverage.subscriberId",
-      "method": "redact"
-    },
-    {
-      "path": "Coverage.dependent",
-      "method": "redact"
-    },
-    {
-      "path": "Coverage.class.value",
       "method": "cryptoHash"
-    },
-    {
-      "path": "Coverage.class.name",
-      "method": "redact"
-    },
-    {
-      "path": "Coverage.network",
-      "method": "redact"
     },
     {
       "path": "CoverageEligibilityRequest.insurance.businessArrangement",
@@ -701,14 +661,6 @@
     },
     {
       "path": "ExplanationOfBenefit.benefitBalance.financial.allowed",
-      "method": "redact"
-    },
-    {
-      "path": "InsurancePlan.name",
-      "method": "redact"
-    },
-    {
-      "path": "InsurancePlan.alias",
       "method": "redact"
     },
     {
