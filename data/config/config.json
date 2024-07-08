@@ -798,7 +798,7 @@
     "cryptoHashKey": "",
     "encryptKey": "",
     "enablePartialAgesForRedact": true,
-    "enablePartialDatesForRedact": true,
+    "enablePartialDatesForRedact": false,
     "enablePartialZipCodesForRedact": true,
     "restrictedZipCodeTabulationAreas": [
       "036",
