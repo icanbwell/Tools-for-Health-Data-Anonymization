@@ -3,6 +3,10 @@
   "processingErrors": "raise",
   "fhirPathRules": [
     {
+      "path": "nodesByName('account')",
+      "method": "redact"
+    },
+    {
       "path": "Patient.birthDate",
       "method": "dateshift"
     },
@@ -271,6 +275,66 @@
     },
     {
       "path": "DetectedIssue.detail",
+      "method": "redact"
+    },
+    {
+      "path": "Observation.valueQuantity",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.valueCodeableConcept",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.valueBoolean",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.valueInteger",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.valueRange",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.valueRatio",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.value",
+      "method": "redact"
+    },
+    {
+      "path": "Observation.referenceRange",
+      "method": "redact"
+    },
+    {
+      "path": "Observation.component.valueQuantity",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.valueCodeableConcept",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.valueBoolean",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.valueInteger",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.valueRange",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.valueRatio",
+      "method": "keep"
+    },
+    {
+      "path": "Observation.component.value",
       "method": "redact"
     },
     {
