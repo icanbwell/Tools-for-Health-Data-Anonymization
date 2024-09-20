@@ -8,4 +8,3 @@ services:
     volumes:
       - ./data:/data
     entrypoint: ["dotnet", "Microsoft.Health.Fhir.Anonymizer.R4.CommandLineTool.dll"]
-    command: ["anonymize", "-i", "/data/input/", "-o", "/data/output/", "-c", "/data/config/config.json", "-v"]

@@ -11,16 +11,56 @@
       "method": "dateshift"
     },
     {
-      "path": "Resource.extension",
+      "path": "Resource.meta.security.where(system='https://www.icanbwell.com/owner').code",
+      "method": "substitute",
+      "replaceWith": "deidentified"
+    },
+    {
+      "path": "Resource.meta.security.where(system='https://www.icanbwell.com/access').code",
+      "method": "substitute",
+      "replaceWith": "deidentified"
+    },
+    {
+      "path": "Resource.meta.security.where(system='https://www.icanbwell.com/vendor').code",
+      "method": "substitute",
+      "replaceWith": "deidentified"
+    },
+    {
+      "path": "Resource.meta.security.where(system='https://www.icanbwell.com/sourceAssigningAuthority').code",
+      "method": "substitute",
+      "replaceWith": "deidentified"
+    },
+    {
+      "path": "Resource.meta.security.where(system='https://www.icanbwell.com/connectionType').code",
       "method": "keep"
     },
     {
-      "path": "Resource.meta.security",
-      "method": "redact"
+      "path": "Resource.meta.security.code",
+      "method": "cryptoHash"
     },
     {
       "path": "Resource.meta.source",
+      "method": "cryptoHash"
+    },
+    {
+      "path": "(Observation.value as string)",
+      "method": "cryptoHash"
+    },
+    {
+      "path": "Observation.referenceRange",
       "method": "redact"
+    },
+    {
+      "path": "(Observation.component.value as string)",
+      "method": "cryptoHash"
+    },
+    {
+      "path": "MedicationRequest.dosageInstruction.text",
+      "method": "cryptoHash"
+    },
+    {
+      "path": "MedicationRequest.dosageInstruction.patientInstruction",
+      "method": "cryptoHash"
     },
     {
       "path": "Organization.identifier",
@@ -59,11 +99,11 @@
       "method": "cryptoHash"
     },
     {
-      "path": "Resource.patient",
+      "path": "Resource.patient.display",
       "method": "cryptoHash"
     },
     {
-      "path": "Resource.subject",
+      "path": "Resource.subject.display",
       "method": "cryptoHash"
     },
     {
@@ -275,66 +315,6 @@
     },
     {
       "path": "DetectedIssue.detail",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.valueQuantity",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.valueCodeableConcept",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.valueBoolean",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.valueInteger",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.valueRange",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.valueRatio",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.value",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.referenceRange",
-      "method": "redact"
-    },
-    {
-      "path": "Observation.component.valueQuantity",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.valueCodeableConcept",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.valueBoolean",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.valueInteger",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.valueRange",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.valueRatio",
-      "method": "keep"
-    },
-    {
-      "path": "Observation.component.value",
       "method": "redact"
     },
     {
@@ -742,8 +722,33 @@
       "method": "redact"
     },
     {
-      "path": "nodesByType('Extension')",
-      "method": "redact"
+      "path": "(nodesByType('Extension').where(url='https://www.icanbwell.com/sourceId').value as string)",
+      "method": "keep"
+    },
+    {
+      "path": "(nodesByType('Extension').where(url='https://www.icanbwell.com/uuid').value as string)",
+      "method": "keep"
+    },
+    {
+      "path": "(nodesByType('Extension').where(url='https://www.icanbwell.com/sourceAssigningAuthority').value as string)",
+      "method": "substitute",
+      "replaceWith": "deidentified"
+    },
+    {
+      "path": "(nodesByType('Identifier').where(system='https://www.icanbwell.com/sourceId').value as string)",
+      "method": "keep"
+    },
+    {
+      "path": "(nodesByType('Identifier').where(system='https://www.icanbwell.com/uuid').value as string)",
+      "method": "keep"
+    },
+    {
+      "path": "(nodesByType('Identifier').where(system='https://www.icanbwell.com/sourceAssigningAuthority').value as string)",
+      "method": "keep"
+    },
+    {
+      "path": "(nodesByType('Extension').value as string)",
+      "method": "cryptoHash"
     },
     {
       "path": "nodesByType('Attachment').url",
