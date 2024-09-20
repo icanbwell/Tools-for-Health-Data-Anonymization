@@ -59,6 +59,14 @@
       "method": "cryptoHash"
     },
     {
+      "path": "MedicationStatement.dosage.text",
+      "method": "cryptoHash"
+    },
+    {
+      "path": "MedicationStatement.dosage.patientInstruction",
+      "method": "cryptoHash"
+    },
+    {
       "path": "MedicationRequest.dosageInstruction.patientInstruction",
       "method": "cryptoHash"
     },
