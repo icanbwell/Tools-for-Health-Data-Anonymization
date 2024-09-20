@@ -55,19 +55,11 @@
       "method": "cryptoHash"
     },
     {
-      "path": "MedicationRequest.dosageInstruction.text",
+      "path": "nodesByType('Dosage').text",
       "method": "cryptoHash"
     },
     {
-      "path": "MedicationStatement.dosage.text",
-      "method": "cryptoHash"
-    },
-    {
-      "path": "MedicationStatement.dosage.patientInstruction",
-      "method": "cryptoHash"
-    },
-    {
-      "path": "MedicationRequest.dosageInstruction.patientInstruction",
+      "path": "nodesByType('Dosage').patientInstruction",
       "method": "cryptoHash"
     },
     {

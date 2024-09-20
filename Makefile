@@ -4,6 +4,8 @@ build:
 shell:
 	docker run -it --rm fhir-anonymizer /bin/bash
 
+# config file format: https://github.com/microsoft/Tools-for-Health-Data-Anonymization/blob/master/docs/FHIR-anonymization.md#fhir-path-rules
+
 .PHONY: run
 run:
 	rm -rf ./data/output/* && \
