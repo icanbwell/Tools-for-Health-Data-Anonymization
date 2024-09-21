@@ -45,8 +45,7 @@ def list_assemblies():
 
 list_assemblies()
 
-from Microsoft.Health.Fhir.Anonymizer.Tool import FilesAnonymizerForJsonFormatResource
-from Microsoft.Health.Fhir.Anonymizer.Tool import Program
+# Import the required namespaces and classes
 from Microsoft.Health.Fhir.Anonymizer.Core import AnonymizerConfigurationManager
 from Microsoft.Health.Fhir.Anonymizer.Core import AnonymizerEngine
 
