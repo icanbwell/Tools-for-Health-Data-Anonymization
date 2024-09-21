@@ -50,12 +50,17 @@ from Microsoft.Health.Fhir.Anonymizer.Tool import Program
 from Microsoft.Health.Fhir.Anonymizer.Core import AnonymizerConfigurationManager
 from Microsoft.Health.Fhir.Anonymizer.Core import AnonymizerEngine
 
+AnonymizerEngine.InitializeFhirPathExtensionSymbols()
+
 config_in_json = """{
   "fhirVersion": "R4",
   "processingError":"raise",
   "fhirPathRules": [
+    {"path": "nodesByType('Extension')", "method": "redact"},
     {"path": "Organization.identifier", "method": "keep"},
+    {"path": "nodesByType('Address').country", "method": "keep"},
     {"path": "Resource.id", "method": "cryptoHash"},
+    {"path": "nodesByType('Reference').reference", "method": "cryptoHash"},
     {"path": "Group.name", "method": "redact"}
   ],
   "parameters": {
