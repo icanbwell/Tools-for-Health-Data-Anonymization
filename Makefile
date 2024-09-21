@@ -1,8 +1,10 @@
 build:
 	docker compose build --progress plain
 
-shell:
-	docker run -it --rm fhir-anonymizer /bin/bash
+.PHONY:shell
+shell: ## Brings up the bash shell in dev docker
+	docker compose --progress=plain build --parallel
+	docker compose --progress=plain run --rm --name anonymizer_shell fhir-anonymizer /bin/sh
 
 # config file format: https://github.com/microsoft/Tools-for-Health-Data-Anonymization/blob/master/docs/FHIR-anonymization.md#fhir-path-rules
 
@@ -15,3 +17,7 @@ run:
 .PHONY: find_text
 find_text:
 	python3 find_text_in_files.py data/output/bailey bailey
+
+.PHONY: up
+up:
+	docker compose up
